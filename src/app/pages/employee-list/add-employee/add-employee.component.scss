@@ -1,0 +1,141 @@
+@import '@theme/styles/themes';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 90vh;
+}
+
+nb-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+nb-card-body {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0;
+  flex: 1;
+  overflow: hidden;
+  padding-bottom: 0px;
+  padding-right: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.form-scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+
+  > * {
+    margin-top: 1rem;
+  }
+}
+
+.full-name-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -0.5rem;
+
+  > * {
+    flex: 1 1 33%;
+    margin: 0 0.5rem 1rem 0.5rem;
+    min-width: 180px;
+  }
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.75rem;
+
+  .label {
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+    transition: color 0.3s ease;
+  }
+}
+
+// Light theme (default)
+.nb-theme-default {
+  .input-group .label {
+    color: var(--color-basic-800, #222);
+  }
+}
+
+// Dark theme
+.nb-theme-dark {
+  .input-group .label {
+    color: var(--color-basic-400, #bbb);
+  }
+}
+
+.error-messages {
+  color: var(--color-danger-default, #ff3860);
+  font-size: 0.85rem;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+  .full-name-inputs > * {
+    flex: 1 1 100%;
+    margin-right: 0;
+  }
+}
+
+.buttons-row {
+  display: flex;
+  gap: 1rem;
+
+  button {
+    min-width: 100px;
+  }
+}
+
+.card-header-with-close {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-button {
+  padding: 0;
+  min-width: auto;
+  height: auto;
+  line-height: 1;
+}
+
+.sticky-footer {
+  position: sticky;
+  bottom: 0;
+  background: var(--background-basic-color-1);
+  padding: 1rem;
+  border-top: 1px solid var(--divider-color, #ccc);
+  z-index: 10;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sub-packets-section {
+  .full-name-inputs {
+    display: flex;
+    margin-bottom: 12px;
+
+    .input-group {
+      flex: 1;
+    }
+  }
+}
+

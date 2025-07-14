@@ -1,0 +1,6 @@
+<nb-checkbox
+  [checked]="rowData?.checked || false"
+  (checkedChange)="onCheckboxChange($event)"
+  (click)="$event.stopPropagation()"
+>
+</nb-checkbox>

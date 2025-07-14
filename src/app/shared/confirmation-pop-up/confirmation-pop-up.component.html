@@ -1,0 +1,16 @@
+<nb-card>
+  <nb-card-header>
+    Confirmation
+  </nb-card-header>
+
+  <nb-card-body>
+    <div class="confirmation-text">
+      Are you sure you want to delete this item?
+    </div>
+  </nb-card-body>
+
+  <nb-card-footer class="buttons-row">
+    <button nbButton status="primary" outline (click)="cancel()">Cancel</button>
+    <button nbButton status="danger" outline (click)="confirm()">Confirm</button>
+  </nb-card-footer>
+</nb-card>

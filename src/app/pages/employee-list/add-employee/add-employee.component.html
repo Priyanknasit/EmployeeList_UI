@@ -1,0 +1,93 @@
+<nb-card>
+  <nb-card-header class="card-header-with-close">
+     Add Employee
+    <button nbButton ghost size="tiny" status="danger" (click)="dismiss()" class="close-button">
+      <nb-icon icon="close-outline"></nb-icon>
+    </button>
+  </nb-card-header>
+
+  <nb-card-body>
+    <form [formGroup]="form" (ngSubmit)="addEmployee()">
+      <div class="form-scroll-area">
+        <!-- Row 1 -->
+        <div class="full-name-inputs">
+          <div class="input-group">
+            <label class="label" for="name">Name</label>
+            <input id="name" nbInput fullWidth placeholder="e.g. John Doe" formControlName="name" />
+          </div>
+          <div class="input-group">
+            <label class="label" for="ssn">SSN</label>
+            <input id="ssn" nbInput fullWidth placeholder="e.g. 123-45-6789" formControlName="ssn" />
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="full-name-inputs">
+          <div class="input-group">
+            <label class="label" for="dob">Date of Birth</label>
+            <input id="dob" nbInput fullWidth type="date" formControlName="dob" />
+          </div>
+          <div class="input-group">
+            <label class="label" for="phone">Phone</label>
+            <input id="phone" nbInput fullWidth placeholder="e.g. +91-9999999999" formControlName="phone" />
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="full-name-inputs">
+          <div class="input-group">
+            <label class="label" for="address">Address</label>
+            <input id="address" nbInput fullWidth placeholder="e.g. 123 Main St" formControlName="address" />
+          </div>
+        </div>
+
+        <!-- City/State/Zip -->
+        <div class="full-name-inputs">
+          <div class="input-group">
+            <label class="label" for="city">City</label>
+            <input id="city" nbInput fullWidth placeholder="e.g. New York" formControlName="city" />
+          </div>
+          <div class="input-group">
+            <label class="label" for="state">State</label>
+            <input id="state" nbInput fullWidth placeholder="e.g. NY" formControlName="state" />
+          </div>
+          <div class="input-group">
+            <label class="label" for="zip">Zip</label>
+            <input id="zip" nbInput fullWidth placeholder="e.g. 10001" formControlName="zip" />
+          </div>
+        </div>
+
+        <!-- Employment Info -->
+        <div class="full-name-inputs">
+          <div class="input-group">
+            <label class="label" for="joinDate">Join Date</label>
+            <input id="joinDate" nbInput fullWidth type="date" formControlName="joinDate" />
+          </div>
+          <div class="input-group">
+            <label class="label" for="exitDate">Exit Date</label>
+            <input id="exitDate" nbInput fullWidth type="date" formControlName="exitDate" />
+          </div>
+        </div>
+
+        <!-- Title & Salary -->
+        <div class="full-name-inputs">
+          <div class="input-group">
+            <label class="label" for="title">Title</label>
+            <input id="title" nbInput fullWidth placeholder="e.g. Software Engineer" formControlName="title" />
+          </div>
+          <div class="input-group">
+            <label class="label" for="salary">Salary</label>
+            <input id="salary" nbInput fullWidth type="number" placeholder="e.g. 75000" formControlName="salary" />
+          </div>
+        </div>
+      </div>
+
+      <div class="sticky-footer">
+        <div class="buttons-row">
+          <button nbButton status="primary" outline type="submit" [disabled]="form.invalid">Add</button>
+          <button nbButton status="danger" outline type="button" (click)="dismiss()">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>

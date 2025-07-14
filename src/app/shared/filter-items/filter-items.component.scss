@@ -1,0 +1,91 @@
+@import '@theme/styles/themes';
+
+nb-card-body {
+  overflow: visible;
+  padding-top: 0;
+
+  > * {
+    margin-top: 1rem;
+  }
+}
+
+.full-name-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -0.5rem;
+
+  > * {
+    flex: 1 1 33%;
+    margin: 0 0.5rem 1rem 0.5rem;
+    min-width: 180px;
+  }
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.75rem;
+
+  .label {
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+    transition: color 0.3s ease;
+  }
+}
+
+// Light theme (default)
+.nb-theme-default {
+  .input-group .label {
+    color: var(--color-basic-800, #222);
+  }
+}
+
+// Dark theme
+.nb-theme-dark {
+  .input-group .label {
+    color: var(--color-basic-400, #bbb);
+  }
+}
+
+.error-messages {
+  color: var(--color-danger-default, #ff3860);
+  font-size: 0.85rem;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+  .full-name-inputs > * {
+    flex: 1 1 100%;
+    margin-right: 0;
+  }
+}
+
+.buttons-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+
+  button {
+    margin-right: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.card-header-with-close {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-button {
+  padding: 0;
+  min-width: auto;
+  height: auto;
+  line-height: 1;
+}
+

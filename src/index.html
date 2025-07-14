@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SHARPQUEST - EMS</title>
+
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpVhQiwAllg1RAFaxMWSpQruuGARy0Y1k&libraries=places"></script>
+</head>
+<body>
+  <ngx-app>Loading...</ngx-app>
+
+  <style>
+    #nb-global-spinner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: #0b0b0b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      flex-direction: column;
+    }
+
+    .diamond-loader {
+      width: 80px;
+      height: 80px;
+      animation: spin 2s linear infinite;
+      color: #007bff;
+    }
+
+    .loader-text {
+      margin-top: 1rem;
+      color: #ffffffcc;
+      font-size: 1rem;
+      font-weight: 500;
+      font-family: 'Segoe UI', sans-serif;
+      letter-spacing: 1px;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg) scale(1);
+      }
+      50% {
+        transform: rotate(180deg) scale(1.1);
+      }
+      100% {
+        transform: rotate(360deg) scale(1);
+      }
+    }
+  </style>
+
+  <div id="nb-global-spinner">
+    <div class="diamond-loader">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M75,17.5H25l-20,20l45,45l45-45L75,17.5z
+                 M55.3,25h12.4l-4.1,10L55.3,25z
+                 M57.2,35H42.8l7.2-8.6L57.2,35z
+                 M36.3,35l-4.1-10h12.4L36.3,35z
+                 M61.6,40L50,68.4L38.4,40H61.6z
+                 M43.3,65.2L18.1,40H33L43.3,65.2z
+                 M67,40h14.9L56.7,65.2L67,40z
+                 M81.9,35H69.1l3.7-9.1L81.9,35z
+                 M27.2,25.9l3.7,9.1H18.1L27.2,25.9z"
+              fill="currentColor"/>
+      </svg>
+    </div>
+  </div>
+</body>
+</html>

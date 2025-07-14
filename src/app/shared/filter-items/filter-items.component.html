@@ -1,0 +1,43 @@
+<nb-card>
+  <nb-card-header class="card-header-with-close">
+    <span>Advanced Filters</span>
+    <button nbButton ghost size="tiny" status="danger" (click)="cancel()" class="close-button">
+      <nb-icon icon="close-outline"></nb-icon>
+    </button>
+  </nb-card-header>
+
+  <nb-card-body>
+    <form [formGroup]="filterForm">
+      <div class="full-name-inputs">
+        <div class="input-group">
+          <label for="itemCode">Item Code</label>
+          <input nbInput fullWidth placeholder="Item Code" formControlName="itemCode" />
+        </div>
+        <div class="input-group">
+          <label for="hsn">HSN</label>
+          <input nbInput fullWidth placeholder="HSN" formControlName="hsn" />
+        </div>
+        <div class="input-group">
+          <label for="category">Category</label>
+          <input nbInput fullWidth placeholder="Category" formControlName="category" />
+        </div>
+      </div>
+
+      <div class="full-name-inputs">
+        <div class="input-group">
+          <label for="salesPriceMin">Min Sales Price</label>
+          <input nbInput type="number" placeholder="Min" formControlName="salesPriceMin" />
+        </div>
+        <div class="input-group">
+          <label for="salesPriceMax">Max Sales Price</label>
+          <input nbInput type="number" placeholder="Max" formControlName="salesPriceMax" />
+        </div>
+      </div>
+
+      <div class="buttons-row" style="margin-top: 1rem;">
+        <button nbButton status="primary" outline (click)="applyFilters()">Apply</button>
+        <button nbButton status="danger" outline type="button" (click)="cancel()">Cancel</button>
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>

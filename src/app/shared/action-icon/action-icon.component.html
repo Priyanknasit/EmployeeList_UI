@@ -1,0 +1,33 @@
+<div class="action-icons">
+  <nb-icon
+    *ngIf="config?.showView"
+    icon="eye-outline"
+    pack="eva"
+    title="View"
+    (click)="onClick('view', $event)"
+  ></nb-icon>
+
+  <nb-icon
+    *ngIf="config?.showEdit"
+    icon="edit-2-outline"
+    pack="eva"
+    title="Edit"
+    (click)="onClick('edit', $event)"
+  ></nb-icon>
+
+  <nb-icon
+    *ngIf="config?.showDelete"
+    icon="trash-2-outline"
+    pack="eva"
+    title="Delete"
+    (click)="onClick('delete', $event)"
+  ></nb-icon>
+
+  <nb-icon
+    *ngIf="config?.showDownload"
+    icon="download-outline"
+    pack="eva"
+    nbTooltip="Download QR"
+    (click)="config.onDownload?.(rowData)">
+  </nb-icon>
+</div>

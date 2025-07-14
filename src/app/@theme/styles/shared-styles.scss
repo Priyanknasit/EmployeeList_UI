@@ -1,0 +1,171 @@
+// src/styles/shared-styles.scss
+
+@import '@theme/styles/themes';
+
+@include nb-install-component() {
+  nb-card {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+// Pagination styles for ng2-smart-table
+ng2-smart-table-pager {
+  justify-content: center !important;
+}
+
+.ng2-smart-pagination-nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.ng2-smart-pagination {
+  padding: 0;
+  margin: 0;
+}
+
+// Header with button - common layout for page headers
+.header-with-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Search bar and actions container
+.search-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+
+  .search-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 250px; // or whatever width you want
+
+    .search-input {
+      width: 100%;
+      padding-right: 2.5rem;  // space for the clear icon
+      height: nb-theme(input-medium-height);
+      line-height: nb-theme(input-medium-line-height);
+      border-radius: nb-theme(input-border-radius);
+      box-sizing: border-box; // make sure padding stays inside width
+    }
+
+    .clear-icon {
+      position: absolute;
+      top: 50%;
+      right: 0;  // align exactly to the right edge of input
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 1.25rem;
+      color: nb-theme(text-hint-color);
+      padding: 0 0.5rem; // optional: make icon area bigger for easier click
+      z-index: 10;
+
+      &:hover {
+        color: nb-theme(text-basic-color);
+      }
+    }
+  }
+
+  .actions-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  button {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
+
+// Disable pointer events on action column cells (if used)
+.action-column-class {
+  pointer-events: none !important;
+}
+
+// ng2-smart-table styling: selected row and hover effects
+ng2-smart-table tbody tr.selected,
+ng2-smart-table tbody tr:hover {
+  background-color: transparent !important;
+}
+
+// ng2-smart-table header styling
+ng2-smart-table thead tr {
+  background-color: nb-theme(background-basic-color-2); // Theme-based background
+  color: nb-theme(text-basic-color); // Theme-based text color
+}
+
+ng2-smart-table thead tr th {
+  border-color: nb-theme(border-basic-color-3); // Themed border
+  font-weight: 600;
+}
+
+// Styles for the column toggle dropdown (nb-select)
+nb-select.column-toggle-select {
+  height: 1.9rem; // Same height as small nbButton
+  min-width: unset;
+  width: auto;
+  max-width: 200px;
+  font-size: 0.875rem;
+  padding: 0 0.75rem;
+}
+
+nb-select.column-toggle-select .select-button span {
+  display: none !important; // Hide the selected text
+}
+
+nb-select.column-toggle-select .select-button::before {
+  content: 'Toggle Columns'; // Static placeholder text
+  color: var(--text-basic-color); // Themed text color
+  font-size: 0.875rem;
+  padding-left: 4px;
+}
+
+/* Start column check-box */
+ngx-checkbox-cell {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1;
+}
+
+ngx-checkbox-cell nb-checkbox {
+  transform: scale(1.35);
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+ngx-checkbox-cell nb-checkbox .custom-checkbox {
+  width: 14px;
+  height: 14px;
+}
+
+ngx-checkbox-cell nb-checkbox .label {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+/* End column check-box */
+
+// To remove vertical scroll issue when we open popup and select option from input field ex. Edit Purchase Invoice
+html.cdk-global-scrollblock {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  overflow-y: hidden !important;
+  overflow-x: auto;
+}

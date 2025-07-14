@@ -1,0 +1,48 @@
+:host {
+  pointer-events: none;
+}
+
+.action-icons {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+
+nb-icon {
+  pointer-events: auto;
+  cursor: pointer;
+  color: var(--text-basic-color);
+  font-size: 1.2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ::ng-deep svg {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+  }
+
+  ::ng-deep i {
+    font-size: 24px;
+  }
+
+  transition: color 0.2s ease-in-out;
+}
+
+nb-icon:hover {
+  color: var(--color-primary-default);
+}
+
+/* Match Action column header and cells color & alignment */
+::ng-deep th.action-header-class,
+::ng-deep td.action-column-class {
+  color: var(--text-basic-color);
+  font-weight: 400;
+  text-align: left !important;
+  padding-left: 10px;
+}
